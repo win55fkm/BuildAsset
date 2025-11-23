@@ -1,54 +1,55 @@
 import React, { useState, useEffect } from 'react';
-import { 
-  BookOpen, 
-  Coffee,
-  Beer,
-  Cigarette,
-  ShoppingBag,
-  Car,
-  Plane,
-  TrendingUp, 
-  Shield, 
-  ShieldCheck,
-  HeartPulse,
-  Target, 
-  PieChart, 
-  ArrowRight, 
-  CheckCircle, 
-  Menu,
-  X,
-  Award,
-  Briefcase,
-  Globe,
-  Percent,
+import { Link } from 'react-router-dom';
+import {
   Activity,
-  HelpCircle,
+  AlertOctagon,
   AlertTriangle,
-  Users,
-  Clock,
-  BarChart2,
-  Coins,
-  Quote,
-  ArrowDown,
-  Building2,
-  User,
-  Lightbulb,
-  Layers,
-  Landmark,
-  Wallet,
-  Unlock,
-  Calendar,
-  FileText,
-  CheckCircle2,
-  Search,
-  Sparkles,
-  RefreshCw,
-  TrendingDown,
-  XCircle,
-  Sun,
   Anchor,
+  ArrowDown,
+  ArrowRight,
+  Award,
+  BarChart2,
+  Beer,
+  BookOpen,
+  Briefcase,
+  Building2,
+  Calendar,
+  Car,
+  CheckCircle,
+  CheckCircle2,
+  Cigarette,
+  Clock,
+  Coffee,
+  Coins,
+  FileText,
+  Globe,
+  HeartPulse,
+  HelpCircle,
+  Landmark,
+  Layers,
+  Lightbulb,
+  Menu,
+  Percent,
+  PieChart,
+  Plane,
+  Quote,
+  RefreshCw,
   Scale,
-  AlertOctagon
+  Search,
+  Shield,
+  ShieldCheck,
+  ShoppingBag,
+  Sparkles,
+  Sun,
+  Target,
+  TrendingDown,
+  TrendingUp,
+  Unlock,
+  User,
+  Users,
+  Wallet,
+  X,
+  XCircle
 } from 'lucide-react';
 
 // --- 共通コンポーネント ---
@@ -1257,6 +1258,50 @@ const navItems = [
               <p className="text-gray-700 text-sm">資産を「コア（守り）」と「サテライト（攻め）」に分ける手法。インデックスと債券で盤石な土台を作り、少額で個別株などの楽しみやハイリターンを狙う。<br/>
               ※個別株が完全に悪だということはありません。リスク許容範囲内であれば、失敗も経験として金融リテラシーを高める貴重な知見となります</p>
             </div>
+          </div>
+        </div>
+        <div className="mt-12 border-t border-gray-100 pt-10">
+          <h4 className="text-xl font-bold text-gray-800 mb-6 text-center">
+            過去データで検証してみよう
+          </h4>
+          <div className="grid md:grid-cols-2 gap-6">
+            {/* S&P500 リンク */}
+            <Link to="/sp500" className="group relative overflow-hidden bg-white border border-indigo-100 p-6 rounded-2xl shadow-sm hover:shadow-md hover:border-indigo-300 transition-all duration-300">
+              <div className="absolute top-0 right-0 p-4 opacity-5 group-hover:opacity-10 transition-opacity">
+                <TrendingUp size={100} className="text-indigo-600" />
+              </div>
+              <div className="relative z-10">
+                <div className="flex items-center justify-between mb-3">
+                  <div className="p-2 bg-indigo-100 text-indigo-600 rounded-lg">
+                    <TrendingUp size={24} />
+                  </div>
+                  <ArrowRight className="text-indigo-300 group-hover:text-indigo-600 group-hover:translate-x-1 transition-transform" />
+                </div>
+                <h5 className="text-lg font-bold text-gray-900 mb-1">S&P500 積立検証</h5>
+                <p className="text-xs text-gray-500">
+                  米国最強指数。ITバブル崩壊やリーマンショックを乗り越えた驚異の実績をシミュレーション。
+                </p>
+              </div>
+            </Link>
+
+            {/* オルカン リンク */}
+            <Link to="/all-country" className="group relative overflow-hidden bg-white border border-emerald-100 p-6 rounded-2xl shadow-sm hover:shadow-md hover:border-emerald-300 transition-all duration-300">
+              <div className="absolute top-0 right-0 p-4 opacity-5 group-hover:opacity-10 transition-opacity">
+                <Globe size={100} className="text-emerald-600" />
+              </div>
+              <div className="relative z-10">
+                <div className="flex items-center justify-between mb-3">
+                  <div className="p-2 bg-emerald-100 text-emerald-600 rounded-lg">
+                    <Globe size={24} />
+                  </div>
+                  <ArrowRight className="text-emerald-300 group-hover:text-emerald-600 group-hover:translate-x-1 transition-transform" />
+                </div>
+                <h5 className="text-lg font-bold text-gray-900 mb-1">全世界株式（オルカン）検証</h5>
+                <p className="text-xs text-gray-500">
+                  究極の分散投資。米国・欧州・新興国の成長を丸ごと取り込む安定感をチェック。
+                </p>
+              </div>
+            </Link>
           </div>
         </div>
       </Section>
