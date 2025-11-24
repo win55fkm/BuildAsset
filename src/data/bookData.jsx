@@ -28,7 +28,7 @@ export const bookData = {
     bgColor: "bg-amber-50",
     borderColor: "border-amber-200",
     summary: "「収入の1割を貯金せよ」「欲望に優先順位をつけよ」など、古代バビロンから伝わる不変の真理。テクニック以前の「お金持ちになるための土台」を作る最初の一冊。",
-    amazonLink: "https://amzn.asia/d/7tubxKa", 
+    amazonLink: "https://amzn.to/3XyB0Dr", 
     content: [
       {
         type: "text",
@@ -113,7 +113,7 @@ export const bookData = {
     bgColor: "bg-blue-50",
     borderColor: "border-blue-200",
     summary: "投資は「ミスをしない」ゲームである。プロでも市場平均に勝つのは難しい。だからこそ、インデックスファンドで市場全体を保有し続けることが、個人投資家の最適解となる。",
-    amazonLink: "https://amzn.asia/d/gDWg2ry",
+    amazonLink: "https://amzn.to/48wKVPR",
     content: [
       {
         type: "text",
@@ -212,7 +212,7 @@ export const bookData = {
     bgColor: "bg-indigo-50",
     borderColor: "border-indigo-200",
     summary: "株価の動きは予測不能（ランダム・ウォーク）である。テクニカル分析やファンダメンタル分析の限界を説き、結論として「インデックス投資」の優位性を半世紀以上前から証明し続けている名著。",
-    amazonLink: "https://amzn.asia/d/iS4j7Tk", // 仮リンク
+    amazonLink: "https://amzn.to/3XLRcRD", // 仮リンク
     content: [
       {
         type: "text",
@@ -299,7 +299,7 @@ export const bookData = {
     bgColor: "bg-emerald-50",
     borderColor: "border-emerald-200",
     summary: "「いつ買うか？」への最終回答。暴落時だろうが高値圏だろうが、タイミングを計らず「ただ買い続けなさい」。データサイエンティストが膨大なデータから導き出した結論。",
-    amazonLink: "https://amzn.asia/d/ehywRDF",
+    amazonLink: "https://amzn.to/4oehbw0",
     content: [
       {
         type: "text",
@@ -404,7 +404,7 @@ export const bookData = {
     bgColor: "bg-purple-50",
     borderColor: "border-purple-200",
     summary: "お金の成功は「知性」ではなく「行動」で決まる。19のストーリーを通じて、私たちの心の弱さと、富を築くための正しい振る舞いを解き明かす。",
-    amazonLink: "https://amzn.asia/d/9NRqI8K", // 必要に応じて正しいリンクに差し替え
+    amazonLink: "https://amzn.to/49CZVwG", // 必要に応じて正しいリンクに差し替え
     content: [
       {
         type: "text",
