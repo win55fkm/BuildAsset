@@ -883,13 +883,13 @@ const navItems = [
           <div className="inline-block px-4 py-1.5 bg-indigo-100 text-indigo-700 rounded-full text-sm font-semibold mb-6 tracking-wide">資産形成 入門編</div>
           <h1 className="text-4xl md:text-6xl font-extrabold text-gray-900 mb-6 leading-tight">賢明な投資家のための<br/><span className="text-indigo-600">理論と実践バイブル</span></h1>
           <p className="text-lg md:text-xl text-gray-600 mb-10 max-w-2xl mx-auto">「なんとなく怖い」を「確固たる自信」へ。<br/>安心して投資を始めるための、歴史とデータが示す「答え」をここに。</p>
-          <button onClick={() => scrollToSection('welcome')} className="bg-indigo-600 text-white px-8 py-4 rounded-full font-bold text-lg shadow-lg hover:bg-indigo-700 hover:shadow-xl transition-all transform hover:-translate-y-1 flex items-center mx-auto">
+          <button onClick={() => scrollToSection('step1')} className="bg-indigo-600 text-white px-8 py-4 rounded-full font-bold text-lg shadow-lg hover:bg-indigo-700 hover:shadow-xl transition-all transform hover:-translate-y-1 flex items-center mx-auto">
             投資を始める理由を知る <ArrowRight className="ml-2" size={20} />
           </button>
         </div>
       </div>
 
-      {/* Chapter 1: Welcome */}
+      {/* Chapter 1: step1 */}
       <Section id="step1" title="Chapter 1: 目的とマインドセット" subtitle="なぜ投資が必要で、どう考えるべきか？" icon={Target}>
         <div className="space-y-16">
           <div className="text-center mb-8">

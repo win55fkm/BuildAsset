@@ -14,73 +14,74 @@ const BookDetailPage = () => {
   const Icon = book.icon;
 
   return (
-    <div className="min-h-screen bg-slate-50 p-6 md:p-12">
+    <div className="min-h-screen bg-slate-50 p-4 md:p-12">
       <div className="max-w-4xl mx-auto">
         
         {/* ナビゲーション */}
-        <Link to="/" className="inline-flex items-center text-gray-500 hover:text-indigo-600 font-bold mb-8 transition-colors">
+        <Link to="/" className="inline-flex items-center text-gray-500 hover:text-indigo-600 font-bold mb-6 md:mb-8 transition-colors text-sm md:text-base">
           <ArrowLeft size={20} className="mr-2"/> トップに戻る
         </Link>
 
         {/* ヘッダーエリア */}
-        <div className={`bg-white rounded-3xl shadow-sm border ${book.borderColor} overflow-hidden mb-10`}>
-          <div className={`${book.bgColor} p-8 md:p-12 text-center`}>
-            <div className={`inline-block p-4 rounded-full bg-white shadow-md mb-6 ${book.color}`}>
-              <Icon size={48} />
+        <div className={`bg-white rounded-3xl shadow-sm border ${book.borderColor} overflow-hidden mb-8 md:mb-10`}>
+          <div className={`${book.bgColor} p-6 md:p-12 text-center`}>
+            <div className={`inline-block p-3 md:p-4 rounded-full bg-white shadow-md mb-4 md:mb-6 ${book.color}`}>
+              <Icon size={32} className="md:w-12 md:h-12" /> {/* アイコンサイズも調整 */}
             </div>
-            <h1 className="text-3xl md:text-5xl font-bold text-gray-900 mb-4">{book.title}</h1>
-            <p className="text-xl text-gray-600 font-medium mb-2">{book.subtitle}</p>
-            <p className="text-sm text-gray-500">著：{book.author}</p>
+            {/* タイトル：スマホで大きすぎないように調整 */}
+            <h1 className="text-2xl md:text-4xl font-bold text-gray-900 mb-3 md:mb-4 leading-tight">{book.title}</h1>
+            <p className="text-base md:text-xl text-gray-600 font-medium mb-2">{book.subtitle}</p>
+            <p className="text-xs md:text-sm text-gray-500">著：{book.author}</p>
           </div>
           
           {/* 導入サマリー */}
-          <div className="p-8 md:p-12 border-t border-gray-100">
-             <h2 className="text-xl font-bold text-gray-800 mb-4 flex items-center">
-               <Star className="text-yellow-400 mr-2 fill-current" /> 
+          <div className="p-6 md:p-12 border-t border-gray-100">
+             <h2 className="text-lg md:text-xl font-bold text-gray-800 mb-3 md:mb-4 flex items-center">
+               <Star className="text-yellow-400 mr-2 fill-current w-5 h-5 md:w-6 md:h-6" /> 
                この本の結論
              </h2>
-             <p className="text-lg text-gray-700 leading-relaxed font-medium">
+             <p className="text-sm md:text-lg text-gray-700 leading-relaxed font-medium">
                {book.summary}
              </p>
           </div>
         </div>
 
-        {/* 詳細コンテンツ（レンダリングロジック修正版） */}
-        <div className="bg-white rounded-3xl shadow-sm border border-gray-200 p-8 md:p-12 mb-10 space-y-12">
+        {/* 詳細コンテンツ */}
+        <div className="bg-white rounded-3xl shadow-sm border border-gray-200 p-6 md:p-12 mb-8 md:mb-10 space-y-8 md:space-y-12">
           {book.content.map((section, index) => {
             
-            // --- 修正箇所：typeによる条件分岐 ---
+            // コンポーネントの場合
             if (section.type === 'component') {
               return (
-                <div key={index} className="my-8">
+                <div key={index} className="my-6 md:my-8">
                   {section.component}
                 </div>
               );
             }
-            // 通常のテキスト (デフォルト)
+            // 通常のテキスト
             return (
               <section key={index}>
                 {section.headline && (
-                  <h3 className={`text-2xl font-bold mb-4 pb-2 border-b-2 ${book.borderColor} ${book.color}`}>
+                  // 見出し：スマホでは少し小さくして改行を防ぐ
+                  <h3 className={`text-lg md:text-2xl font-bold mb-3 md:mb-4 pb-2 border-b-2 ${book.borderColor} ${book.color}`}>
                     {section.headline}
                   </h3>
                 )}
-                {/* 改行コードを <br/> に変換して表示 */}
-                <p className="text-gray-700 leading-loose whitespace-pre-line">
+                {/* 本文：スマホではtext-smにして読みやすく */}
+                <p className="text-sm md:text-base text-gray-700 leading-relaxed whitespace-pre-line">
                   {section.body}
                 </p>
               </section>
             );
-            // -----------------------------------
 
           })}
         </div>
 
         {/* アフィリエイトリンクエリア */}
-        <div className="bg-slate-800 text-white rounded-2xl p-8 text-center shadow-lg">
-           <h3 className="text-xl font-bold mb-4">この本を手に取ってみる</h3>
-           <p className="text-slate-300 mb-8 text-sm">
-             投資のテクニックだけでなく、人生の指針となる言葉が詰まっています。<br/>
+        <div className="bg-slate-800 text-white rounded-2xl p-6 md:p-8 text-center shadow-lg">
+           <h3 className="text-lg md:text-xl font-bold mb-3 md:mb-4">この本を手に取ってみる</h3>
+           <p className="text-slate-300 mb-6 md:mb-8 text-xs md:text-sm">
+             投資のテクニックだけでなく、人生の指針となる言葉が詰まっています。<br className="hidden md:block" />
              手元に置いて、迷った時に読み返したい一冊です。
            </p>
            {book.amazonLink ? (
@@ -88,9 +89,9 @@ const BookDetailPage = () => {
                href={book.amazonLink} 
                target="_blank" 
                rel="noreferrer"
-               className="inline-flex items-center bg-yellow-500 hover:bg-yellow-600 text-yellow-900 font-bold py-4 px-8 rounded-full transition-transform transform hover:-translate-y-1 shadow-lg"
+               className="inline-flex items-center bg-yellow-500 hover:bg-yellow-600 text-yellow-900 font-bold py-3 px-6 md:py-4 md:px-8 rounded-full transition-transform transform hover:-translate-y-1 shadow-lg text-sm md:text-base"
              >
-               <ShoppingCart className="mr-2" />
+               <ShoppingCart className="mr-2 w-4 h-4 md:w-5 md:h-5" />
                Amazonで詳細を見る
              </a>
            ) : (
