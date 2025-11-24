@@ -306,7 +306,7 @@ const ActionSection = () => (
                     {/* 没収ラベル */}
                     <div className="absolute inset-0 flex items-center justify-center">
                       <span className="bg-red-600 text-white text-[10px] md:text-xs font-bold px-2 py-0.5 rounded shadow-sm z-10 animate-pulse">
-                        TAX 没収
+                        TAX(引かれる)
                       </span>
                     </div>
                   </div>
@@ -320,7 +320,7 @@ const ActionSection = () => (
                   </div>
 
                   {/* マイナス強調の矢印（絶対配置で外に出す） */}
-                  <div className="absolute -left-2 top-2 md:-left-8 md:top-4 text-red-500 text-xs font-bold flex flex-col items-center">
+                  <div className="absolute -left-2 top-2 md:-left-20 md:top-0 text-red-500 text-xs font-bold flex flex-col items-center">
                      <span className="text-lg font-bold">−20%</span>
                      <span className="hidden md:inline text-[10px]">引かれる</span>
                   </div>
@@ -444,7 +444,7 @@ const ActionSection = () => (
       {/* 5. SBI証券誘導 (CTA) */}
       <div className="border-t border-gray-200 pt-12">
         <div className="text-center mb-8">
-            <h3 className="text-2xl font-bold text-gray-900 mb-2">NISAを始めるなら「SBI証券」一択</h3>
+            <h3 className="text-2xl font-bold text-gray-900 mb-2">NISAを始めるなら「SBI証券」がおススメ</h3>
             <p className="text-gray-600 text-sm max-w-2xl mx-auto">
                 手数料、ポイント還元、使いやすさ。どれをとっても国内No.1のシェアを誇ります。<br/>
                 迷ったらここを選んでおけば、将来後悔することはありません。
@@ -880,9 +880,9 @@ const navItems = [
       {/* Hero Section */}
       <div id="hero" className="pt-32 pb-20 px-6 bg-gradient-to-b from-white to-indigo-50">
         <div className="max-w-4xl mx-auto text-center">
-          <div className="inline-block px-4 py-1.5 bg-indigo-100 text-indigo-700 rounded-full text-sm font-semibold mb-6 tracking-wide">資産形成 深掘り編</div>
+          <div className="inline-block px-4 py-1.5 bg-indigo-100 text-indigo-700 rounded-full text-sm font-semibold mb-6 tracking-wide">資産形成 入門編</div>
           <h1 className="text-4xl md:text-6xl font-extrabold text-gray-900 mb-6 leading-tight">賢明な投資家のための<br/><span className="text-indigo-600">理論と実践バイブル</span></h1>
-          <p className="text-lg md:text-xl text-gray-600 mb-10 max-w-2xl mx-auto">「なんとなく怖い」を「確固たる自信」へ。<br/>なぜ今、投資が必要なのか？歴史とデータが示す「答え」をここに。</p>
+          <p className="text-lg md:text-xl text-gray-600 mb-10 max-w-2xl mx-auto">「なんとなく怖い」を「確固たる自信」へ。<br/>安心して投資を始めるための、歴史とデータが示す「答え」をここに。</p>
           <button onClick={() => scrollToSection('welcome')} className="bg-indigo-600 text-white px-8 py-4 rounded-full font-bold text-lg shadow-lg hover:bg-indigo-700 hover:shadow-xl transition-all transform hover:-translate-y-1 flex items-center mx-auto">
             投資を始める理由を知る <ArrowRight className="ml-2" size={20} />
           </button>
@@ -943,7 +943,7 @@ const navItems = [
                 <div className="space-y-4">
                   <div className="bg-indigo-50 p-4 rounded-lg">
                     <h4 className="font-bold text-indigo-900 mb-2">❌ 見せかけの金持ち</h4>
-                    <p className="text-sm text-indigo-800">収入が増えても生活水準を上げてしまい、いつまでも満たされることはない。</p>
+                    <p className="text-sm text-indigo-800">収入が増えても生活水準を上げてしまい、いつまでも満たされることはない。結局、お金は残らない。</p>
                   </div>
                   <div className="bg-green-50 p-4 rounded-lg">
                     <h4 className="font-bold text-green-900 mb-2">⭕ 真のお金持ち</h4>
@@ -1196,7 +1196,7 @@ const navItems = [
           <div>
             <h3 className="text-2xl font-bold text-gray-900 mb-6">1. 投資と投機の違い</h3>
             <InfoBox type="success" title="結論：あなたがやるべきは「投資」です">
-              <p>「株＝ギャンブル」は「投機」のイメージです。我々は企業の成長にお金を託す「投資」を行います。投機はゼロサムゲームですが、投資はプラスサムゲームです。</p>
+              <p>「株＝ギャンブル」は「投機」のイメージです。我々は企業の成長にお金を託す「投資」を行います。投機は誰かが損をするゼロサムゲームですが、投資は全員で得を生むプラスサムゲームです。</p>
             </InfoBox>
             <div className="grid md:grid-cols-2 gap-6">
               <div className="bg-white p-6 rounded-xl border-l-4 border-indigo-500 shadow-sm">
@@ -1259,7 +1259,7 @@ const navItems = [
               <DcaVisualizer />
               <div className="bg-gray-50 p-5 rounded-lg border border-gray-200 mt-6">
                 <h5 className="font-bold text-gray-800 mb-2">なぜ最強なのか？</h5>
-                <p className="text-sm text-gray-600">暴落はバーゲンセールであり、「安いときに大量に買う」ことで、将来の利益の種まき期間と捉えることができます。<br/>
+                <p className="text-sm text-gray-600">暴落はバーゲンセールであり、「安いときに大量に買う」ことで、将来の利益の種まき期間と捉えることができます。<br/><br/>
                 しかし、実際は、暴落時には「さらに下がるのではないか」という<strong>恐怖の感情</strong>により大量に買うことは難しくなります。<br/>
                 逆に、株価が上がると、もっと買って利益を上げたいという<strong>欲</strong>が生じます。これが健全な企業の利益によるものではなく、市場の過熱した期待感によるものだった場合、その後の暴落で損失を生じます。大量に高値掴みをしていた場合は最悪です。<br/>
                 <br/>
@@ -1267,20 +1267,6 @@ const navItems = [
                 </p>
               </div>
             </Card>
-          </div>
-
-          <div className="mt-12 pt-12 border-t border-gray-200">
-            <h3 className="text-2xl font-bold text-gray-900 mb-6 text-center">市場の波（リスク）を理解する</h3>
-            <div className="grid md:grid-cols-2 gap-6">
-               <div className="bg-white p-6 rounded-xl border border-gray-200 shadow-sm">
-                  <h4 className="font-bold text-gray-800 mb-2 flex items-center"><Globe className="mr-2 text-indigo-500"/>為替リスク</h4>
-                  <p className="text-sm text-gray-600">外国株を持つということは「外貨」を持つこと。円安になれば資産価値は上がり、円高になれば下がります。</p>
-               </div>
-               <div className="bg-white p-6 rounded-xl border border-gray-200 shadow-sm">
-                  <h4 className="font-bold text-gray-800 mb-2 flex items-center"><Activity className="mr-2 text-indigo-500"/>金利と株価</h4>
-                  <p className="text-sm text-gray-600">基本的にシーソーの関係です。金利が上がると株価は下がりやすく、金利が下がると株価は上がりやすい傾向があります。</p>
-               </div>
-            </div>
           </div>
         </div>
       </Section>
@@ -1495,10 +1481,10 @@ const navItems = [
         <div className="max-w-4xl mx-auto px-6">
           <div className="border-t border-gray-800 pt-8 text-xs text-gray-600">
             <p className="mb-2">
-              ※本資料は「資産形成 v6.0」に基づいた学習用資料です。<br/>
+              ※本資料は一般的な投資理論に基づいた学習用資料です。<br/>
               ※特定の金融商品の勧誘を目的としたものではありません。投資の最終判断はご自身で行ってください。
             </p>
-            <p>&copy; 2024 AssetBuild Guidebook</p>
+            <p>&copy; 2025 AssetBuild Guidebook</p>
           </div>
         </div>
       </footer>

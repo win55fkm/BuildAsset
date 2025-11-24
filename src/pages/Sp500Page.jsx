@@ -31,7 +31,7 @@ const Sp500Page = () => {
         <div className="mt-12 p-6 bg-white rounded-xl border border-gray-200">
           <h3 className="font-bold text-lg mb-2">このデータの見方</h3>
           <p className="text-sm text-gray-600">
-            初期状態では1980年からの全期間が表示されています。<br/>
+            初期状態では1950年からの全期間が表示されています。<br/>
             「ITバブル崩壊（2000年頃）」や「リーマンショック（2008年）」の直前から積立を始めた場合でも、
             長期で保有し続ければ資産が増えていることを確認してみましょう。
           </p>
