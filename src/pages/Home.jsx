@@ -853,7 +853,7 @@ export default function App() {
         <div className="max-w-4xl mx-auto text-center">
           <div className="inline-block px-3 md:px-4 py-1 md:py-1.5 bg-indigo-100 text-indigo-700 rounded-full text-xs md:text-sm font-semibold mb-4 md:mb-6 tracking-wide">資産形成 入門編</div>
           <h1 className="text-3xl md:text-6xl font-extrabold text-gray-900 mb-4 md:mb-6 leading-tight">
-            賢明な投資家のための<br className="hidden md:block" />
+            賢明な投資家のための<br/>
             <span className="text-indigo-600">理論と実践バイブル</span>
           </h1>
           <p className="text-base md:text-xl text-gray-600 mb-8 md:mb-10 max-w-2xl mx-auto leading-relaxed">
@@ -946,7 +946,7 @@ export default function App() {
       {/* Chapter 2: Wisdom */}
       <Section id="step2" title="Chapter 2: 先人の知恵" subtitle="SNSなどの情報ではなく、名著から原則を学ぶ" icon={BookOpen}>
         <div className="bg-indigo-50 p-6 md:p-8 rounded-2xl border border-indigo-100 mb-10 shadow-sm">
-          <h3 className="text-lg md:text-2xl font-bold text-indigo-900 mb-6 text-center flex items-center justify-center"><BookOpen className="mr-3 w-6 h-6 md:w-8 md:h-8" />名著たちが辿り着いた「3つの共通結論」</h3>
+          <h3 className="text-lg md:text-2xl font-bold text-indigo-900 mb-6 text-center flex items-center justify-center"><BookOpen className="mr-3 w-6 h-6 md:w-8 md:h-8" />名著たちが辿り着いた「3つの原則」</h3>
           <div className="grid md:grid-cols-3 gap-6">
             <div className="bg-white p-6 rounded-xl border border-indigo-100 shadow-sm flex flex-col items-center text-center">
               <BarChart2 size={32} className="text-indigo-500 mb-4 md:w-10 md:h-10"/>
