@@ -6,6 +6,8 @@ import Home from './pages/Home';
 import Sp500Page from './pages/Sp500Page';
 import AllCountryPage from './pages/AllCountryPage';
 import BookDetailPage from './pages/BookDetailPage'; // 書籍詳細ページ
+import PrivacyPolicy from './pages/PrivacyPolicy';
+import ProfilePage from './pages/ProfilePage';
 
 // ページ遷移時にスクロールを上に戻すためのコンポーネント
 import { useEffect } from "react";
@@ -34,6 +36,10 @@ function App() {
         
         {/* 書籍詳細ページ（ダイナミックルーティング） */}
         <Route path="/books/:id" element={<BookDetailPage />} />
+        
+        {/* 自己紹介 */}
+        <Route path="/privacy" element={<PrivacyPolicy />} />
+        <Route path="/profile" element={<ProfilePage />} />
       </Routes>
     </BrowserRouter>
   );

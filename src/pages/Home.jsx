@@ -1479,10 +1479,21 @@ const navItems = [
       {/* Footer */}
       <footer className="bg-gray-900 text-gray-400 py-12 text-center">
         <div className="max-w-4xl mx-auto px-6">
+          
+          {/* ▼▼▼ リンクの追加 ▼▼▼ */}
+          <div className="flex justify-center space-x-6 mb-8 text-sm font-medium">
+            <Link to="/profile" className="hover:text-white transition-colors">運営者情報</Link>
+            <Link to="/privacy" className="hover:text-white transition-colors">プライバシーポリシー</Link>
+          </div>
+
           <div className="border-t border-gray-800 pt-8 text-xs text-gray-600">
+            {/* Amazonアソシエイトの免責文言（必須） */}
+            <p className="mb-4">
+              Amazonのアソシエイトとして、当メディアは適格販売により収入を得ています。
+            </p>
             <p className="mb-2">
               ※本資料は一般的な投資理論に基づいた学習用資料です。<br/>
-              ※特定の金融商品の勧誘を目的としたものではありません。投資の最終判断はご自身で行ってください。
+              ※特定の金融商品の勧誘を目的としたものではありません。投資の最終判断はご自身の責任で行ってください。
             </p>
             <p>&copy; 2025 AssetBuild Guidebook</p>
           </div>
