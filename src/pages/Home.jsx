@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import { bookData } from '../data/bookData';
 import {
   Activity,
   AlertOctagon,
@@ -476,10 +477,11 @@ const ActionSection = () => (
                 
                 {/* Affiliate Link Button */}
                 <a 
-                  href="YOUR_AFFILIATE_LINK" 
+                  // ▼ 審査用：SBI証券の公式トップページなどを設定しておく
+                  href="https://search.sbisec.co.jp/v2/popwin/info/home/pop6040_torihikikouza_open.html" 
                   target="_blank" 
-                  rel="noreferrer"
-                  className="block w-full bg-gradient-to-r from-red-500 to-orange-500 hover:from-red-600 hover:to-orange-600 text-white font-bold text-xl py-5 rounded-full shadow-lg transform transition hover:-translate-y-1 hover:shadow-2xl"
+                  rel="noreferrer" // 外部サイトへのリンクにはこれをつけるのがマナーです
+                  className="..."
                 >
                   SBI証券で無料口座開設
                   <span className="block text-xs font-normal mt-1 opacity-90">※最短5分・マイナンバーカード対応</span>
@@ -987,11 +989,157 @@ const navItems = [
           </div>
         </div>
 
+        {/* ▼▼▼ 追加：書籍紹介エリアのタイトルブロック ▼▼▼ */}
+        <div className="text-center mb-10 mt-16">
+          <div className="inline-flex items-center justify-center px-4 py-1.5 bg-indigo-50 text-indigo-700 rounded-full mb-4 border border-indigo-100">
+             <BookOpen size={16} className="mr-2" />
+             <span className="text-xs font-bold tracking-wider uppercase">Must Read Books</span>
+          </div>
+          <h3 className="text-2xl md:text-3xl font-bold text-gray-900 mb-3">
+            知識は名著から。<br className="md:hidden"/>資産形成のバイブル5選
+          </h3>
+          <p className="text-gray-500 text-sm md:text-base max-w-2xl mx-auto">
+            数ある投資本の中から、時代を超えて読み継がれる「本物」を厳選しました。<br/>
+            信頼できる理論/知識を身に付けることこそが、投資を行う上での最大の自信と安心となります。<br/>
+          </p>
+        </div>
+
         <TabGroup tabs={[
-          { label: "バビロンの大富豪", content: (<div><h4 className="text-lg font-bold text-gray-900 mb-2">黄金に愛される7つの教え</h4><p className="text-sm text-gray-600">1.収入の1/10を貯金せよ 2.欲望に優先順位をつけよ 3.貯えた金に働かせよ...</p></div>) },
-          { label: "敗者のゲーム", content: (<div><h4 className="text-lg font-bold text-gray-900 mb-2">投資は「ミスをしない」ゲーム</h4><p className="text-sm text-gray-600">アマチュアのテニス同様、無理に勝ちに行かずミス（狼狽売りなど）を避けた者が勝つ。</p></div>) },
-          { label: "ウォール街のランダム・ウォーカー", content: (<div><h4 className="text-lg font-bold text-gray-900 mb-2">株価の予測は不可能</h4><p className="text-sm text-gray-600">市場全体（インデックス）を丸ごと買い、長期保有するのが最も合理的。</p></div>) },
-          { label: "JUST KEEP BUYING", content: (<div><h4 className="text-lg font-bold text-gray-900 mb-2">ただ、買い続けなさい</h4><p className="text-sm text-gray-600">暴落時も買い続けることが、結果的に機会損失を防ぎリターンを最大化する。</p></div>) }
+          { 
+            label: "1. バビロンの大富豪", 
+            content: (
+              <div className="text-center">
+                <div className="flex flex-wrap justify-center gap-2 mb-4">
+                  <span className="bg-emerald-100 text-emerald-700 px-3 py-1 rounded-full text-xs font-bold">入門</span>
+                  <span className="bg-gray-100 text-gray-600 px-3 py-1 rounded-full text-xs font-bold">お金の基礎・原理原則</span>
+                </div>
+                <h4 className="text-xl font-bold text-gray-900 mb-2">{bookData.babylon.title}</h4>
+                <p className="text-gray-600 mb-6 text-sm">{bookData.babylon.summary}</p>
+                
+                <div className="bg-slate-50 p-5 rounded-xl border border-slate-100 text-left max-w-xl mx-auto mb-8 shadow-sm">
+                  <h5 className="font-bold text-gray-700 text-xs mb-3 border-b border-slate-200 pb-2">この本の論点</h5>
+                  <ul className="space-y-2 text-sm text-gray-600">
+                     <li className="flex items-start"><CheckCircle2 size={16} className="text-amber-500 mr-2 mt-0.5 shrink-0"/>収入の1/10を貯金し、種銭を作る</li>
+                     <li className="flex items-start"><CheckCircle2 size={16} className="text-amber-500 mr-2 mt-0.5 shrink-0"/>欲望に優先順位をつけ、予算内で暮らす</li>
+                     <li className="flex items-start"><CheckCircle2 size={16} className="text-amber-500 mr-2 mt-0.5 shrink-0"/>蓄えた金を働かせ、複利の恩恵を受ける</li>
+                     <li className="flex items-start"><CheckCircle2 size={16} className="text-amber-500 mr-2 mt-0.5 shrink-0"/>自分自身（人的資本）に投資する</li>
+                  </ul>
+                </div>
+
+                <Link to="/books/babylon" className="inline-flex items-center bg-indigo-600 text-white px-6 py-3 rounded-full font-bold hover:bg-indigo-700 transition-colors shadow-md text-sm">
+                  詳しく学ぶ <ArrowRight size={16} className="ml-2"/>
+                </Link>
+              </div>
+            ) 
+          },
+          { 
+            label: "2. サイコロジー・オブ・マネー", 
+            content: (
+              <div className="text-center">
+                <div className="flex flex-wrap justify-center gap-2 mb-4">
+                  <span className="bg-blue-100 text-blue-700 px-3 py-1 rounded-full text-xs font-bold">初級</span>
+                  <span className="bg-gray-100 text-gray-600 px-3 py-1 rounded-full text-xs font-bold">投資マインド・行動心理</span>
+                </div>
+                <h4 className="text-xl font-bold text-gray-900 mb-2">{bookData.psychology.title}</h4>
+                <p className="text-gray-600 mb-6 text-sm">{bookData.psychology.summary}</p>
+
+                <div className="bg-slate-50 p-5 rounded-xl border border-slate-100 text-left max-w-xl mx-auto mb-8 shadow-sm">
+                  <h5 className="font-bold text-gray-700 text-xs mb-3 border-b border-slate-200 pb-2">この本の論点</h5>
+                  <ul className="space-y-2 text-sm text-gray-600">
+                     <li className="flex items-start"><CheckCircle2 size={16} className="text-purple-500 mr-2 mt-0.5 shrink-0"/>成功は知性ではなく「振る舞い」で決まる</li>
+                     <li className="flex items-start"><CheckCircle2 size={16} className="text-purple-500 mr-2 mt-0.5 shrink-0"/>「富（Wealth）」と「リッチ」は違う</li>
+                     <li className="flex items-start"><CheckCircle2 size={16} className="text-purple-500 mr-2 mt-0.5 shrink-0"/>足るを知り、ゴールポストを動かさない</li>
+                     <li className="flex items-start"><CheckCircle2 size={16} className="text-purple-500 mr-2 mt-0.5 shrink-0"/>合理性より「夜安眠できる」計画を立てる</li>
+                  </ul>
+                </div>
+
+                <Link to="/books/psychology" className="inline-flex items-center bg-indigo-600 text-white px-6 py-3 rounded-full font-bold hover:bg-indigo-700 transition-colors shadow-md text-sm">
+                  詳しく学ぶ <ArrowRight size={16} className="ml-2"/>
+                </Link>
+              </div>
+            ) 
+          },
+          { 
+            label: "3. 敗者のゲーム", 
+            content: (
+              <div className="text-center">
+                <div className="flex flex-wrap justify-center gap-2 mb-4">
+                  <span className="bg-indigo-100 text-indigo-700 px-3 py-1 rounded-full text-xs font-bold">中級</span>
+                  <span className="bg-gray-100 text-gray-600 px-3 py-1 rounded-full text-xs font-bold">インデックス投資入門</span>
+                </div>
+                <h4 className="text-xl font-bold text-gray-900 mb-2">{bookData.loser.title}</h4>
+                <p className="text-gray-600 mb-6 text-sm">{bookData.loser.summary}</p>
+
+                <div className="bg-slate-50 p-5 rounded-xl border border-slate-100 text-left max-w-xl mx-auto mb-8 shadow-sm">
+                  <h5 className="font-bold text-gray-700 text-xs mb-3 border-b border-slate-200 pb-2">この本の論点</h5>
+                  <ul className="space-y-2 text-sm text-gray-600">
+                     <li className="flex items-start"><CheckCircle2 size={16} className="text-blue-500 mr-2 mt-0.5 shrink-0"/>投資はミスをしない「敗者のゲーム」</li>
+                     <li className="flex items-start"><CheckCircle2 size={16} className="text-blue-500 mr-2 mt-0.5 shrink-0"/>稲妻が輝く瞬間（ベストな日）を逃すな</li>
+                     <li className="flex items-start"><CheckCircle2 size={16} className="text-blue-500 mr-2 mt-0.5 shrink-0"/>市場に「居続ける」ことが最大の鍵</li>
+                     <li className="flex items-start"><CheckCircle2 size={16} className="text-blue-500 mr-2 mt-0.5 shrink-0"/>低コストなインデックスファンドを選ぶ</li>
+                  </ul>
+                </div>
+
+                <Link to="/books/loser" className="inline-flex items-center bg-indigo-600 text-white px-6 py-3 rounded-full font-bold hover:bg-indigo-700 transition-colors shadow-md text-sm">
+                  詳しく学ぶ <ArrowRight size={16} className="ml-2"/>
+                </Link>
+              </div>
+            ) 
+          },
+          { 
+            label: "4. JUST KEEP BUYING", 
+            content: (
+              <div className="text-center">
+                <div className="flex flex-wrap justify-center gap-2 mb-4">
+                  <span className="bg-indigo-100 text-indigo-700 px-3 py-1 rounded-full text-xs font-bold">中級</span>
+                  <span className="bg-gray-100 text-gray-600 px-3 py-1 rounded-full text-xs font-bold">データ分析・入金力</span>
+                </div>
+                <h4 className="text-xl font-bold text-gray-900 mb-2">{bookData.buying.title}</h4>
+                <p className="text-gray-600 mb-6 text-sm">{bookData.buying.summary}</p>
+
+                <div className="bg-slate-50 p-5 rounded-xl border border-slate-100 text-left max-w-xl mx-auto mb-8 shadow-sm">
+                  <h5 className="font-bold text-gray-700 text-xs mb-3 border-b border-slate-200 pb-2">この本の論点</h5>
+                  <ul className="space-y-2 text-sm text-gray-600">
+                     <li className="flex items-start"><CheckCircle2 size={16} className="text-emerald-500 mr-2 mt-0.5 shrink-0"/>タイミングを計らず「ただ買い続けろ」</li>
+                     <li className="flex items-start"><CheckCircle2 size={16} className="text-emerald-500 mr-2 mt-0.5 shrink-0"/>底値買いの「神様」でも積立には勝てない</li>
+                     <li className="flex items-start"><CheckCircle2 size={16} className="text-emerald-500 mr-2 mt-0.5 shrink-0"/>貧しい時は人的資本、富める時は金融資本</li>
+                     <li className="flex items-start"><CheckCircle2 size={16} className="text-emerald-500 mr-2 mt-0.5 shrink-0"/>現金を遊ばせる機会損失を避ける</li>
+                  </ul>
+                </div>
+
+                <Link to="/books/buying" className="inline-flex items-center bg-indigo-600 text-white px-6 py-3 rounded-full font-bold hover:bg-indigo-700 transition-colors shadow-md text-sm">
+                  詳しく学ぶ <ArrowRight size={16} className="ml-2"/>
+                </Link>
+              </div>
+            ) 
+          },
+          { 
+            label: "5. ランダム・ウォーカー", 
+            content: (
+              <div className="text-center">
+                <div className="flex flex-wrap justify-center gap-2 mb-4">
+                  <span className="bg-orange-100 text-orange-700 px-3 py-1 rounded-full text-xs font-bold">上級</span>
+                  <span className="bg-gray-100 text-gray-600 px-3 py-1 rounded-full text-xs font-bold">金融理論・歴史</span>
+                </div>
+                <h4 className="text-xl font-bold text-gray-900 mb-2">{bookData.random.title}</h4>
+                <p className="text-gray-600 mb-6 text-sm">{bookData.random.summary}</p>
+
+                <div className="bg-slate-50 p-5 rounded-xl border border-slate-100 text-left max-w-xl mx-auto mb-8 shadow-sm">
+                  <h5 className="font-bold text-gray-700 text-xs mb-3 border-b border-slate-200 pb-2">この本の論点</h5>
+                  <ul className="space-y-2 text-sm text-gray-600">
+                     <li className="flex items-start"><CheckCircle2 size={16} className="text-indigo-500 mr-2 mt-0.5 shrink-0"/>株価の短期的予測は不可能（ランダム・ウォーク）</li>
+                     <li className="flex items-start"><CheckCircle2 size={16} className="text-indigo-500 mr-2 mt-0.5 shrink-0"/>プロも「猿のダーツ投げ」には勝てない</li>
+                     <li className="flex items-start"><CheckCircle2 size={16} className="text-indigo-500 mr-2 mt-0.5 shrink-0"/>テクニカル・ファンダメンタル分析の限界</li>
+                     <li className="flex items-start"><CheckCircle2 size={16} className="text-indigo-500 mr-2 mt-0.5 shrink-0"/>効率的市場仮説とインデックスの優位性</li>
+                  </ul>
+                </div>
+
+                <Link to="/books/random" className="inline-flex items-center bg-indigo-600 text-white px-6 py-3 rounded-full font-bold hover:bg-indigo-700 transition-colors shadow-md text-sm">
+                  詳しく学ぶ <ArrowRight size={16} className="ml-2"/>
+                </Link>
+              </div>
+            ) 
+          }
         ]} />
         
         <div className="mt-12">

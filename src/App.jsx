@@ -4,7 +4,8 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 // 各ページの読み込み
 import Home from './pages/Home';
 import Sp500Page from './pages/Sp500Page';
-import AllCountryPage from './pages/AllCountryPage'; // ★ここが抜けていました！
+import AllCountryPage from './pages/AllCountryPage';
+import BookDetailPage from './pages/BookDetailPage'; // 書籍詳細ページ
 
 // ページ遷移時にスクロールを上に戻すためのコンポーネント
 import { useEffect } from "react";
@@ -18,6 +19,7 @@ const ScrollToTop = () => {
   return null;
 };
 
+// ▼▼▼ ここに function App() が1つだけある状態にします ▼▼▼
 function App() {
   return (
     <BrowserRouter>
@@ -26,11 +28,12 @@ function App() {
         {/* URLが "/" のときは Home を表示 */}
         <Route path="/" element={<Home />} />
         
-        {/* URLが "/sp500" のときは Sp500Page を表示 */}
+        {/* シミュレーターページ */}
         <Route path="/sp500" element={<Sp500Page />} />
-
-        {/* URLが "/all-country" のときは AllCountryPage を表示 */}
         <Route path="/all-country" element={<AllCountryPage />} />
+        
+        {/* 書籍詳細ページ（ダイナミックルーティング） */}
+        <Route path="/books/:id" element={<BookDetailPage />} />
       </Routes>
     </BrowserRouter>
   );
