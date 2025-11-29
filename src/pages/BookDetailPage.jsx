@@ -7,6 +7,7 @@ const BookDetailPage = () => {
   const { id } = useParams();
   const book = bookData[id];
 
+  // データがない場合はトップへリダイレクト
   if (!book) {
     return <Navigate to="/" replace />;
   }
@@ -26,7 +27,7 @@ const BookDetailPage = () => {
         <div className={`bg-white rounded-3xl shadow-sm border ${book.borderColor} overflow-hidden mb-8 md:mb-10`}>
           <div className={`${book.bgColor} p-6 md:p-12 text-center`}>
             <div className={`inline-block p-3 md:p-4 rounded-full bg-white shadow-md mb-4 md:mb-6 ${book.color}`}>
-              <Icon size={32} className="md:w-12 md:h-12" /> {/* アイコンサイズも調整 */}
+              <Icon size={32} className="md:w-12 md:h-12" />
             </div>
             {/* タイトル：スマホで大きすぎないように調整 */}
             <h1 className="text-2xl md:text-4xl font-bold text-gray-900 mb-3 md:mb-4 leading-tight">{book.title}</h1>
@@ -62,12 +63,10 @@ const BookDetailPage = () => {
             return (
               <section key={index}>
                 {section.headline && (
-                  // 見出し：スマホでは少し小さくして改行を防ぐ
                   <h3 className={`text-lg md:text-2xl font-bold mb-3 md:mb-4 pb-2 border-b-2 ${book.borderColor} ${book.color}`}>
                     {section.headline}
                   </h3>
                 )}
-                {/* 本文：スマホではtext-smにして読みやすく */}
                 <p className="text-sm md:text-base text-gray-700 leading-relaxed whitespace-pre-line">
                   {section.body}
                 </p>
@@ -84,16 +83,24 @@ const BookDetailPage = () => {
              投資のテクニックだけでなく、人生の指針となる言葉が詰まっています。<br className="hidden md:block" />
              手元に置いて、迷った時に読み返したい一冊です。
            </p>
+           
+           {/* ▼▼▼ ここを修正しました（フラグメント <>...</> で囲んでいます） ▼▼▼ */}
            {book.amazonLink ? (
-             <a 
-               href={book.amazonLink} 
-               target="_blank" 
-               rel="noreferrer"
-               className="inline-flex items-center bg-yellow-500 hover:bg-yellow-600 text-yellow-900 font-bold py-3 px-6 md:py-4 md:px-8 rounded-full transition-transform transform hover:-translate-y-1 shadow-lg text-sm md:text-base"
-             >
-               <ShoppingCart className="mr-2 w-4 h-4 md:w-5 md:h-5" />
-               Amazonで詳細を見る
-             </a>
+             <>
+               <a 
+                 href={book.amazonLink} 
+                 target="_blank" 
+                 rel="noreferrer"
+                 className="inline-flex items-center bg-yellow-500 hover:bg-yellow-600 text-yellow-900 font-bold py-3 px-6 md:py-4 md:px-8 rounded-full transition-transform transform hover:-translate-y-1 shadow-lg text-sm md:text-base"
+               >
+                 <ShoppingCart className="mr-2 w-4 h-4 md:w-5 md:h-5" />
+                 Amazonで詳細を見る
+               </a>
+               {/* 規約対応用の注記 */}
+               <p className="text-[10px] text-slate-400 mt-4 opacity-70">
+                 ※本記事はAmazonアソシエイト・プログラムを利用しています
+               </p>
+             </>
            ) : (
              <span className="text-gray-500 text-xs">リンク準備中</span>
            )}
